@@ -4,9 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Table Tag</title>
+    <style>
+      table{
+        text-align: center;
+        width: 50%;
+        margin: 40px auto;
+      }
+      .double-border{
+        border-collapse: double;
+        width: 50%;
+        margin: 10px;
+      }
+      .double-border td{
+           border: 2px double;
+           padding: 10px;
+           text-align: left;
+      }
+      th{
+        text-align: center;
+        border: 2px double;
+      }
+    </style>
 </head>
 <body>
-    <table>
+    <table class="double-border" border="1">
         <tr></tr>
         <th>Topic</th>
         <th>Description</th>
@@ -25,14 +46,20 @@
   </tr>
   <tr>
     <td>Compiler</td>
-    <td><u>A compiler translates code written in a high-level programming language into a lower-level language</u></td>
+    <td><u><bigger>A compiler translates</bigger> code written in a high-level programming language into a lower-level language</u></td>
   </tr>
   <tr>
     <td>Interpreter</td>
-    <td><lowercase>An interpeter transale</lowercase></td>
+    <td><small>An interpeter translate code line-by-line when the program is running.</small></td>
   </tr>
-
-
+  <tr>
+    <td>Chemical forumla of water</td>
+    <td>H<sub>2</sub>O</td>
+  </tr>
+  <tr>
+    <td>Area of circle</td>
+    <td>πr<sup>2</sup></td>
+  </tr>
     </table>
 </body>
 </html>
