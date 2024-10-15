@@ -3,7 +3,7 @@ body{
     background-color:aqua;
 }
 
-container{
+.container{
     max-width: 400px;
     margin: 40px auto;
     padding: 20px;
@@ -17,7 +17,11 @@ h1{
     margin-bottom: 20px;
 }
 
+<<<<<<< HEAD
 .form-grouo{
+=======
+form-group{
+>>>>>>> 38ef46f34b3744a30b4e084f1124bcc5142c9531
     margin-bottom: 20px;
 }
 
