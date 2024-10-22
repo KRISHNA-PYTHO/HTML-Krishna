@@ -5,19 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfoilo</title>
     <link rel="stylesheet" href="portfolio.css">
+    <script src="https://kit.fontawesome.com/b258d1a519.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="header">
         <div class="container">
             <nav>
                 <img src="images/logo.png" class="logo">
-                <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Services</a></li>
-                    <li><a href="">Portfolio</a></li>
-                    <li><a href="">Contact</a></li>
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
 </ul>
+<i class="fas fa-bars" onclick="openmenu()"></i>
             </nav>
             <div class="header-text">
                 <p>Web Developer</p>
@@ -33,7 +36,9 @@
             </div>
                 <div class="about-col-2">
                 <h1 class="sub-title">About Me</h1>
-                <p></p>
+                <p>I Love Challenges!</p>
+                <p>I am career minded individual with ambitious,positive and professional attitude and super quick learner.</p>
+                <p>I have more than 4 years experience with marketing which is proven by achieving business goals and providing to guests and customers exellent service.</p>
                 <div class="tab-title">
                     <p class="tab-links active-link" onclick="opentab('Skills')">Skills</p>
                     <p class="tab-links" onclick="opentab('Experience')">Experience</p>
@@ -67,24 +72,126 @@
             <h1 class="sub-title">My Services</h1>
             <div class="services-list">
                 <div>
-                    <h2>service</h2>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Web Development</h2>
+                    <p>Web devlop involves creating thee visual elements and layout of a website,while coding involves designs into a function website using HTML and CSS dedicated web developers translate the designs to code</p>
+                    <a href="https://en.wikipedia.org/wiki/Web_development">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-brands fa-salesforce"></i>
+                    <h2>Sale Representive</h2>
+                    <p>A sale representive interacts directly with prospective customers or clients to sell a company's products or services. They're usually responsible for generating leads,contacting potential customers andd building relationship to increase sales. Sales representive have through knowledge about a compan's products or servives so they can make targeted pitches to consumers.</p>
+                    <a href="https://en.wikipedia.org/wiki/Sales">Learn more</a>
                 </div>
             </div>
         </div>
     </div>
-<script>
-    var tablinks = document.getElementsByClassName("tab-links");
-    var tabcontents = document.getElementsByClassName("tab-contents");
-    function opentab(tabname){
-        for(tablink of tablinks){
-            tablink.classList.remove("active-link");
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">My Work</h1>
+            <div class="work-list">
+                <div class="work">
+                <img src="images/create profile.png">
+                <div class="layer">
+                    <h3>Student Create Profile</h3>
+                    <p>The website is created by registration of student profile.</p>
+                    <a href="http://127.0.0.1:5500/assignment/student%20registration%20form.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/sign up.png">
+                <div class="layer">
+                    <h3>Student Sign Up</h3>
+                    <p>The website is created to student login for the portal user</p>
+                    <a href="http://127.0.0.1:5500/assignment/aasign.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/application form.png">
+                <div class="layer">
+                    <h3>Application Form</h3>
+                    <p>The webite is created to Application Form to  fill the form. </p>
+                    <a href="http://127.0.0.1:5500/assignment/application%20form.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+        <a href="https://github.com/KRISHNA-PYTHO/HTML-Krishna" class="btn">See More</a>
+  </div>
+    </div>
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-solid fa-envelope"></i>maurya1389@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i>8652819945</p>
+                    <div class="social-icons">
+                        <a href="https://wa.me/qr/KOZIY2VCQQYEB1"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100032949174242"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="http://www.linkedin.com/in/krishna-maurya-30316b279"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/mr.krishna_maurya_12?igsh=Y2tzdXJjc3JnNzc5"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="http://github.com/krishna-pytho"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                    <a href="" class="btn btn2">Download Cv</a>
+                </div>
+                <div class="contact-right">
+                   <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright © 2024 Krishna,Inc.All right reserved.</p>
+        </div>
+    </div>
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab")
         }
-        for(tabcontent of tabcontents){
-            tabcontent.classList.remove("active-tab");
+
+        var sidemenu = document.getElementById("sidemenu");
+
+        function openmenu(){
+            sidemenu.style.right =  "0";
         }
-        event.currentTarget.classList.add("active-link");
-        document.getElementById(tabname).classList.add("active-tab")
-    }
-</script>
+
+        function closemenu(){
+            sidemenu.style.right = "-200px"
+        }
+
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwwIwUR5lZbl4_hInDADNgDuHg1XCwyxxwGSdt6wA9s7_r9Jld4DfZKKfQrV8EkYBd5/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById(msg)
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "message sent succesfully"
+                setTimeout(function(){
+                    msg.innerHTML = ""
+                },5000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
 </body>
 </html>
+
