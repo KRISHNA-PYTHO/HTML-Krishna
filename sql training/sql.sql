@@ -251,6 +251,40 @@ ALTER TABLE marvel
 CHANGE COLUMN address pata VARCHAR (30);
 
 USE shield;
+DROP TABLE avengers;
+
+CREATE TABLE avengers(
+ar_id INT PRIMARY KEY AUTO_INCREMENT,
+name VARCHAR(30));
+
+INSERT INTO avengers(name)
+VALUES('captain america'),
+('spiderman'),
+('winter solider');
+
+CREATE TABLE avenger_enemy(
+ae_id INT PRIMARY KEY AUTO_INCREMENT,
+enemy_name VARCHAR(30) ,
+ar_id INT,
+CONSTRAINT avenger
+FOREIGN KEY (ar_id) REFERENCES avengers(ar_id));
+
+INSERT INTO avenger_enemy(enemy_name,ar_id)
+VALUES('zomie',3),
+('goblin',2),
+('hydra',1);
+
+ALTER TABLE avenger_enemy
+DROP CONSTRAINT avenger;
+
+DROP TABLE avengers;
+
+select* from avenger_enemy;
+
+desc avenger_enemy;
+
+
+
 
 
 
