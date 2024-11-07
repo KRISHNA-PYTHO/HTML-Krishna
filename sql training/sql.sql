@@ -257,10 +257,10 @@ CREATE TABLE avengers(
 ar_id INT PRIMARY KEY AUTO_INCREMENT,
 name VARCHAR(30));
 
-INSERT INTO avengers(name)
-VALUES('captain america'),
-('spiderman'),
-('winter solider');
+INSERT INTO avengers(hero,city)
+VALUES('captain america','ca'),
+('thor','fa),
+('ironman',nyc');
 
 CREATE TABLE avenger_enemy(
 ae_id INT PRIMARY KEY AUTO_INCREMENT,
@@ -282,11 +282,94 @@ DROP TABLE avengers;
 select* from avenger_enemy;
 
 desc avenger_enemy;
+DROP TABLE avenger_enemy;
 
+USE shield;
 
+CREATE TABLE avengers(
+ar_id  INT PRIMARY KEY AUTO_INCREMENT,
+hero VARCHAR(30),
+city CHAR(15));
 
+INSERT INTO avengers(ar_id,hero,city)
+VALUES (1,'CAPTION','CA'),
+(2,'THOR','FA'),
+(3,'IRONMAN','NYC');
 
+CREATE TABLE avenger_enemy(
+ae_id INT PRIMARY KEY AUTO_INCREMENT,
+enemyname VARCHAR(30)
+);
 
+INSERT INTO avenger_enemy(enemyname)
+VALUES('THANOS'),
+('ZOLA'),
+('LOHI');
+
+ALTER TABLE avenger_enemy
+ADD COLUMN ar_id INT,
+ADD CONSTRAINT ar_id
+FOREIGN KEY(ar_id) REFERENCES avengers(ar_id);
+
+SELECT * FROM avenger_enemy;
+select * from avengers;
+
+update avenger_enemy
+set ar_id=
+case
+when ae_id=1 then 3
+when ae_id=2 then 1
+when ae_id=3 then 2
+where ar_id
+end;
+
+use shield;
+drop table avenger_enemy;
+drop table avengers;
+
+create table avenger(
+ar_id int primary key auto_increment,
+name varchar(30)
+);
+
+insert into avenger(name)
+values ('steve'),
+('tony'),
+('peter');
+
+create table avenger_enemy(
+ae_id int primary key auto_increment,
+name varchar(30),
+ar_id int,
+foreign key (ar_id) references avenger(ar_id)
+on update cascade
+);
+
+insert into avenger_enemy(name,ar_id)
+values('thanos',2),
+('goblin',3),
+('zola',1);
+
+delete from avenger_enemy
+where ae_id=3;
+
+delete from avenger
+where ar_id=2 ;
+
+-- show table--
+select * from avenger_enemy;
+select * from avenger;
+
+-- drop table --
+drop table avenger_enemy;
+drop table avenger;
+
+delete from avenger
+where ar_id=1 ;
+
+update avenger
+set ar_id=30
+where name='peter';
 
 
 
