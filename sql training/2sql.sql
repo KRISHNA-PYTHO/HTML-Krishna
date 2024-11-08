@@ -213,4 +213,31 @@ select e.employee_name as employee,m.employee_name as manager from employees as 
 inner join employees as m
 on m.employee_id=e.manager_id;
 
+drop table avengers;
+drop table avengers_enemy;
+drop table weapon;
 
+create table avengers(
+  ar_id int PRIMARY key AUTO_INCREMENT,
+  f_name varchar(30),
+  l_name varchar(30),
+  heroic_name varchar(30),
+  city varchar(30));
+  
+insert into avengers(f_name,l_name,heroic_name,city)
+  VALUES('Roger','Steve','Captain America','NYC'),
+      ('Tony','Stark','Iron Man',NULL),
+  ('Thor','Odinson','Thor','NYC'),
+  ('Peter','Parker','Spider-Man',NULL),
+  ('Scott','Lang','Ant-Man','California'),
+  ('Stephen','Strange','Dr.Strange','Florida'),
+  ('James','Barnes','Winter Soldier',NULL);
+  
+  -- ifnull --
+  select ifnull(city, 'india')  as new_city
+  from avengers;
+  
+  -- nullif --
+  select nullif(city,'india') as new_city
+  from avengers;
+  
