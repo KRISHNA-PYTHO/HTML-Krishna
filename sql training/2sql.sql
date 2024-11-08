@@ -152,4 +152,65 @@ select ae.heroic_name,a.enemy_name from avengers_enemy as a
 right join avengers as ae
 on a.ar_id=ae.ar_id;
 
+use sakila;
+
+
+DROP TABLE employees;
+
+CREATE TABLE employees (
+    employee_id INT PRIMARY KEY,
+    employee_name VARCHAR(50),
+    manager_id INT
+);
+
+INSERT INTO
+    employees (
+        employee_id,
+        employee_name,
+        manager_id
+    )
+VALUES (1, 'John Doe', 3),
+    (2, 'Jane Smith', 1),
+    (3, 'Alice Johnson', NULL),
+    (4, 'Bob Brown', 2),
+    (5, 'Emily White', 2);
+
+
+SELECT * from employees;
+
+
+--  self joint --
+select e.employee_name as employee,m.employee_name as manager from employees as e
+inner join employees as m
+on m.employee_id=e.manager_id;
+
+DROP TABLE employees;
+
+CREATE TABLE employees (
+    employee_id INT PRIMARY KEY,
+    employee_name VARCHAR(50),
+    manager_id INT
+);
+
+INSERT INTO
+    employees (
+        employee_id,
+        employee_name,
+        manager_id
+    )
+VALUES (1, 'John Doe', 3),
+    (2, 'Jane Smith', 1),
+    (3, 'Alice Johnson', NULL),
+    (4, 'Bob Brown', 2),
+    (5, 'Emily White', 2);
+
+
+SELECT * from employees;
+
+
+--  self joint --
+select e.employee_name as employee,m.employee_name as manager from employees as e
+inner join employees as m
+on m.employee_id=e.manager_id;
+
 
