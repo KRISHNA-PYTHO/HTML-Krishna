@@ -1,10 +1,26 @@
-*{
-    font-family: sans-serif;
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    outline: none;
-    border: none;
-    text-decoration: none;
-    transition: all .2s linear;
+}
+
+.animated-text {
+    font-size: 40px;
+    font-weight: bold;
+    color: red;
+    opacity: 0; 
+    transform: translateX(-100px); 
+    animation: fadeInMove 3s ease-out forwards; 
+}
+
+@keyframes fadeInMove {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
